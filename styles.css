@@ -22,7 +22,6 @@ header.initial-nav {
     top: 5%;
     width: 100%;
     z-index: 1000;
-    /* background: rgba(255, 255, 255, 0.5); Optional: semi-transparent background */
 }
 
 header.sticky-nav {
@@ -46,9 +45,11 @@ nav ul {
     display: flex;
     justify-content: space-around;
     width: 30%;
+    transition: max-height 0.3s ease-in-out;
 }
 
 nav a {
+    position: relative;
     font-family: "Mulish", sans-serif;
     font-size: 11px;
     text-decoration: none;
@@ -60,10 +61,57 @@ nav a {
     letter-spacing: .3em;
     text-transform: uppercase;
     font-style: normal;
+    text-wrap: nowrap;
+    display: inline-block; /* Required for pseudo-elements */
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active::after {
+    width: 100%; /* Ensure underline is visible for active links */
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust based on your design */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background: rgba(255, 255, 255, 0.903); /* Light color for loading effect */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links.show {
+    display: block;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
 }
 
 .carousel {
@@ -76,6 +124,8 @@ nav a:hover {
     /* Ensure dots stay at the bottom */
 }
 
+
+/* CARROUSEL IMAGE CSS */
 .carousel img {
     width: 100%;
     height: 100%;
@@ -83,6 +133,22 @@ nav a:hover {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    transform: scale(1.1); /* Slightly scale up for effect */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* CARROUSEL IMAGE CSS LOGIC */
+.carousel img.active {
+    opacity: 1;
+    transform: scale(1); /* Normal scale */
+    z-index: 1; /* Bring the active image on top */
+}
+
+.carousel img.inactive {
+    opacity: 0;
+    transform: scale(1.1); /* Slightly scale up for effect */
+    z-index: 0; /* Move the inactive image below */
 }
 
 .hero-text {
@@ -93,10 +159,12 @@ nav a:hover {
     color: white;
     text-align: center;
     z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease-out; /* Add fadeIn animation */
 }
 
 .hero-text h1 {
-    font-size: 5em;
+    font-size: 4em;
     font-family: "Cormorant Garamond", serif;
     font-weight: 300;
     font-style: normal;
@@ -140,27 +208,70 @@ nav a:hover {
 .content {
     height: 1000px;
     background-color: darkslategray;
-    /* Just for demonstration purposes, ensure the page is scrollable  */
 }
 
+@media screen and (max-width: 1000px) {
+    .menu-icon {
+        display: block;
+    }
 
-@media screen and (max-width: 768px) {
-    nav ul {
-        width: 100%;
-        flex-direction: column;
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
     }
 
     .hero-text h1 {
         font-size: 2em;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: .5rem;
+        text-wrap: wrap;
     }
 
-    .carousel {
-        height: 50vh;
-        /* Adjust the height for smaller screens */
+    header.sticky-nav {
+        display: none;
     }
+}
 
-    .carousel-dots {
-        margin-bottom: 10px;
-        /* Adjust spacing for smaller screens */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
