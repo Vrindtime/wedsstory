@@ -64,6 +64,13 @@ nav a {
     text-wrap: nowrap;
     display: inline-block; /* Required for pseudo-elements */
 }
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+nav a.active::before {
+    transform: scaleX(1); /* Ensure underline is visible for active links */
+}
 
 nav a:hover::after {
     width: 100%;
