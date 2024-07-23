@@ -311,13 +311,16 @@ nav a:hover::before {
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Adjust gap between images */
+    gap: 0px; /* Adjust gap between images */
     width: 100%; /* Full width */
+    place-content: center;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
+    display: grid;
+    place-items: center;
 }
 
 .gallery-item img {
@@ -348,6 +351,11 @@ nav a:hover::before {
 }
 
 @media screen and (max-width: 1200px) {
+
+    .gallery-item img {
+        width: 80%;
+    }
+
     .h1_custom{
         font-size: 1.2em;
         font-weight: 400;
@@ -361,6 +369,10 @@ nav a:hover::before {
 
     .gallery {
         grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .image-caption{
+        text-align: center;
     }
 
     header {
@@ -380,5 +392,8 @@ nav a:hover::before {
 @media screen and (max-width: 600px) {
     .gallery {
         grid-template-columns: 1fr; 
+    }
+    .gallery-item img {
+        width: 100%;
     }
 }
