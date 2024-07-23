@@ -6,7 +6,7 @@ const stickyNav = document.querySelector('.sticky-nav');
 const carouselContainer = document.querySelector('.carousel-container');
 const heroText = document.querySelector('.hero-text');
 
-const titles = ["FOR CELEBRATIONS", "FOR YOUR SPECIAL DAY", "FOR EVERY MEMORY"];
+const titles = ["FOR CELEBRATIONS", "FOR LOVE", "FOR JOY"];
 const subtitles = ["For your moments, narrates your story.", "Cherish every special moment.", "Capture every beautiful memory."];
 
 function showSlide(index) {
@@ -41,7 +41,7 @@ dots.forEach((dot, i) => {
 });
 
 window.addEventListener('scroll', () => {
-    const carouselBottom = carouselContainer.getBoundingClientRect().bottom;
+    const carouselBottom = carouselContainer.getBoundingClientRect().bottom +500;
     if (window.innerWidth >= 768) {
         if (carouselBottom <= 0) {
             stickyNav.style.display = 'flex';

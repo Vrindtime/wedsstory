@@ -8,6 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #F4F0ED;
 }
 
 .carousel-container {
@@ -51,17 +52,14 @@ nav ul {
 nav a {
     position: relative;
     font-family: "Mulish", sans-serif;
-    font-size: 11px;
+    font-size: 8px;
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 23px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: .3em;
     text-transform: uppercase;
-    font-style: normal;
-    text-wrap: nowrap;
     display: inline-block; /* Required for pseudo-elements */
 }
 nav a:hover::before {
@@ -99,7 +97,7 @@ nav a:hover::before {
 
 .menu-icon {
     display: none;
-    font-size: 24px;
+    font-size: 14px;
     cursor: pointer;
     color: white;
 }
@@ -176,13 +174,12 @@ nav a:hover::before {
     font-weight: 300;
     font-style: normal;
     letter-spacing: 1rem;
-    text-wrap: nowrap;
 }
 
 .hero-text p {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-family: "Cormorant Garamond", serif;
-    font-weight: 100;
+    font-weight: 200;
     font-style: italic;
 }
 
@@ -200,9 +197,7 @@ nav a:hover::before {
     height: 10px;
     background-color: grey;
     transform: rotate(45deg);
-    /* Diamond shape */
     border-radius: 8%;
-    /* Circular border when active */
     border: 2px solid white;
     cursor: pointer;
 }
@@ -212,12 +207,9 @@ nav a:hover::before {
     border: 2px solid white;
 }
 
-.content {
-    height: 1000px;
-    background-color: darkslategray;
-}
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1200px) {
     .menu-icon {
         display: block;
     }
@@ -235,7 +227,6 @@ nav a:hover::before {
         font-weight: 400;
         font-style: normal;
         letter-spacing: .5rem;
-        text-wrap: wrap;
     }
 
     header.sticky-nav {
@@ -280,5 +271,114 @@ nav a:hover::before {
     }
     to {
         opacity: 0;
+    }
+}
+
+.text_padding{
+    padding: 2%;
+}
+
+.h1_custom{
+    color: #54595F;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1rem;
+    padding: .5%;
+}
+
+.p_custom{
+    color: #7A7A7A;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px; /* Symmetric horizontal padding */
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Center container */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Adjust gap between images */
+    width: 100%; /* Full width */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    /* width: 100%; */
+    width: 40vw;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(.95);
+}
+
+
+.image-caption {
+    color: #54595F;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.3em;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative; /* Changed from absolute to relative */
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+    .h1_custom{
+        font-size: 1.2em;
+        font-weight: 400;
+        letter-spacing: 2px;
+        padding: .5%;
+    }
+    
+    .p_custom{
+        font-size: .8em;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    header {
+        text-align: left; /* Align text to left on mobile */
+        padding: 10px;
+    }
+
+    nav ul {
+        display: block; /* Stack navigation links vertically */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; 
     }
 }
