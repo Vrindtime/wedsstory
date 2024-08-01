@@ -86,4 +86,3 @@ document.querySelectorAll('nav a').forEach((link) => {
         this.classList.add('active');
     });
 });
-

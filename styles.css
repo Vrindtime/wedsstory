@@ -305,7 +305,7 @@ nav a:hover::before {
     padding-top: 80px;
     padding-bottom: 80px;
     margin: 0 auto; /* Center the container */
-    max-width: 1200px; /* Center container */
+    max-width: 80vw; /* Center container */
 }
 
 .gallery {
@@ -324,9 +324,7 @@ nav a:hover::before {
 }
 
 .gallery-item img {
-    /* width: 100%; */
-    width: 40vw;
-    object-fit: cover;
+    width: 100%;
     transition: transform 0.5s ease;
 }
 
@@ -338,7 +336,8 @@ nav a:hover::before {
 .image-caption {
     color: #54595F;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0px;
+    margin-bottom: 20px;
     font-size: 1.3em;
     font-family: "Cormorant Garamond", serif;
     font-weight: 400;
@@ -396,4 +395,114 @@ nav a:hover::before {
     .gallery-item img {
         width: 100%;
     }
+}
+
+
+.features{
+    width: 100%;
+    height: 40vh;
+    background-color: #757B66;
+    display: flex;
+    align-items: center;
+    padding: 0% 10%;
+}
+
+.icon-custom {
+    color: #ffffff; 
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+
+.feature h5{
+    font-size: 1.8em;
+    font-weight: 400;
+    letter-spacing: 4;
+    font-family: "Cormorant Garamond", serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+.feature h6{
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 4;
+    font-family: "Cormorant Garamond", serif;
+    color: white;
+}
+
+.feature p{
+    font-size: 1em;
+    font-weight: 200;
+    font-family: "Mulish", sans-serif;
+    color: white;
+    padding: 6% 0%;
+}
+
+.h2_custom{
+    color: #54595F;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: .5rem;
+    word-spacing: .2rem;
+    padding: 2%;
+    text-transform: uppercase;
+}
+
+.video-section{
+    padding: 7% 20%;
+    position: relative;
+    display: inline-block;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.play-button {
+    background-color:rgb(255, 255, 255,.2);
+    border: 1px solid rgb(255, 255, 255,.8);
+    border-radius: 50%;
+    padding: 10px 20px;
+    cursor: pointer;
+    padding: 60px;
+}
+
+.play-button-hover:hover{   
+    color: red;
+}
+
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.play-button i {
+    font-size: 24px;
+}
+
+.video-container {
+    display: none;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+}
+
+.content{
+    height: 100vh;
 }
