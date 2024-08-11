@@ -86,3 +86,38 @@ document.querySelectorAll('nav a').forEach((link) => {
         this.classList.add('active');
     });
 });
+
+// review
+let currentReviewIndex = 0;
+const reviews = document.querySelectorAll('.review');
+const counter = document.querySelector('.review-counter');
+
+function updateCounter() {
+    counter.textContent = `${(currentReviewIndex + 1).toString().padStart(2, '0')} / ${reviews.length.toString().padStart(2, '0')}`;
+}
+
+function showReview(index) {
+    reviews.forEach((review, i) => {
+        review.classList.remove('active');
+        if (i === index) {
+            review.classList.add('active');
+        }
+    });
+    updateCounter();
+}
+
+function nextReview() {
+    currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+    showReview(currentReviewIndex);
+}
+
+function prevReview() {
+    currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+    showReview(currentReviewIndex);
+}
+
+// Initialize the first review as active and update the counter
+showReview(currentReviewIndex);
+setInterval(nextReview, 4000);
+
+
