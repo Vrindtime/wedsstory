@@ -12,7 +12,7 @@
 .bento__img {
     width: 100%;
     height: 100%;
-    object-fit: inherit;
+    object-fit: cover;
 }
 
 .bento__item--1 {
