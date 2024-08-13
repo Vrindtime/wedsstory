@@ -42,10 +42,11 @@ header.sticky-nav {
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 2vh;
-    padding: 10px 0;
+    padding: 2% 5%;
 }
 
 nav ul {
@@ -112,13 +113,13 @@ nav a:hover::before {
 .nav-links {
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    width: 40%;
 }
 
 .nav-links.show {
     display: block;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 100%;
     left: 0;
@@ -388,7 +389,11 @@ nav a:hover::before {
     }
 
     nav ul {
-        display: block; 
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0% 5%;
     }
 
     nav ul li {
