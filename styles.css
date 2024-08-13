@@ -283,6 +283,7 @@ nav a:hover::before {
 
 .text_padding{
     padding: 2%;
+    margin-top: 80px;
 }
 
 .h1_custom{
@@ -407,17 +408,27 @@ nav a:hover::before {
 
 .features{
     width: 100%;
-    height: 40vh;
     background-color: #757B66;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 0% 10%;
+    padding: 10% 10%;
 }
 
 .icon-custom {
     color: #ffffff; 
     font-size: 48px;
     margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1200px) {
+    .features{
+        background-color: #757B66;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0% 10%;
+        height: 40vh;
+    }
 }
 
 
@@ -460,6 +471,14 @@ nav a:hover::before {
     text-transform: uppercase;
 }
 
+@media screen and (max-width: 1200px ) {
+    .h2_custom{
+        color: #54595F;
+        text-align: center;
+        font-size: .8em;
+    }
+}
+
 .carousel-review {
     height: 40vh;
     width: 100%;
@@ -481,12 +500,14 @@ nav a:hover::before {
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+    align-items: center;
 }
 
 .reviews img {
     width: 50%; 
     object-fit: cover;
 }
+
 
 
 .review-content {
@@ -515,6 +536,8 @@ nav a:hover::before {
     font-weight: 200;
     font-family: "Cormorant Garamond", serif;
 }
+
+
 
 .carousel-review-inner {
     display: flex;
@@ -573,20 +596,18 @@ nav a:hover::before {
 }
 
 .carousel-review-controls {
-    position: absolute !important;
-    bottom: 10% !important;
-    right: 20% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center;
-    gap: 20px !important;
+    position: absolute;
+    bottom: 5%;
+    right: 8%;
+    display: flex;
+    justify-content: space-evenly;
     font-family: "Cormorant Garamond", serif;
     color: #6b6b6b;
-    font-size: 16px;
 }
+
 .carousel-review-controls {
-    z-index: 10; /* Increase the z-index */
-    width: 7vw;
+    z-index: 2; /* Increase the z-index */
+    width: 8vw;
 }
 
 .carousel-review-controls button {
@@ -603,6 +624,35 @@ nav a:hover::before {
 .carousel-review-controls .review-counter {
     font-size: 18px;
     margin: 0 10px;
+}
+
+@media screen and (max-width: 1200px ) {
+    .reviews img {
+        width: 100%; 
+        height: 25vh;
+        object-fit: contain;
+    }
+    .review-content {
+        width: 48%;
+        height: 15vh;
+        padding: 0%;
+    }
+    .carousel-review-controls {
+        z-index: 2;
+        width: 15vw;
+    }
+    
+    .carousel-review-controls {
+        position: absolute !important;
+        bottom: 8% !important;
+        right: 28% !important;
+        display: flex !important;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        color: #6b6b6b;
+        font-size: 16px;
+    }
+    
 }
 
 .footer {
@@ -665,4 +715,32 @@ nav a:hover::before {
 
 .contact p:hover {
     color: #000;
+}
+
+/* Media query for screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .reviews{
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .separator {
+        display: none; 
+        width: 0px;
+        height: 0px;/* Hide vertical lines on smaller screens */
+    }
+
+    .link-grid {
+        grid-template-columns: 1fr; /* Stack links vertically */
+    }
 }
