@@ -1,7 +1,11 @@
-.video-section{
+.video-section {
     padding: 7% 15%;
     position: relative;
     display: inline-block;
+}
+
+.tumbnail {
+    position: relative;
 }
 
 .image {
@@ -12,22 +16,21 @@
 
 .overlay {
     position: absolute;
-    top: 53%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 .play-button {
-    background-color:rgb(255, 255, 255,.2);
-    border: 1px solid rgb(255, 255, 255,.8);
+    background-color: rgb(255, 255, 255, .2);
+    border: 1px solid rgb(255, 255, 255, .8);
     border-radius: 50%;
     padding: 10px 20px;
     cursor: pointer;
     padding: 60px;
 }
 
-.play-button-hover:hover{   
+.play-button-hover:hover {
     color: red;
 }
 
@@ -48,19 +51,14 @@
     height: 315px;
 }
 
-@media screen and (max-width: 1200px ) {
-    .overlay {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+@media screen and (max-width: 1200px) {
+
     .play-button {
         padding: 20px;
     }
+
     .container-bento {
         margin: -3rem auto;
     }
-    
+
 }
