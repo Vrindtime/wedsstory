@@ -56,3 +56,13 @@
     grid-row-start: 6;
     grid-row-end: 9;
 }
+
+
+@media screen and (max-width: 1200px) {
+    .bento {
+        display: flex;
+        grid-gap: 15px;
+        padding: 0% 15%;
+        flex-direction: column;
+    }
+}

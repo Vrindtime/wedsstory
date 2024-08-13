@@ -1,5 +1,5 @@
 .video-section{
-    padding: 7% 20%;
+    padding: 7% 15%;
     position: relative;
     display: inline-block;
 }
@@ -62,4 +62,5 @@
     .container-bento {
         margin: -3rem auto;
     }
+    
 }
