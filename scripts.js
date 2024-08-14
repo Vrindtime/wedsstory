@@ -53,10 +53,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get the current page URL
