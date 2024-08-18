@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Weds Story Photography</title>
+    <link rel="icon" type="image/png" href="../asset/LOGO.png">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="./style/contact.css">
+    <script src="navbar.js" defer></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="initial-nav">
+        <nav>
+            <img src="../asset/wedstoriesLogo.png" alt="logo" width="150px" height="150px">
+            <div class="menu-icon" onclick="toggleMenu()">MENU ☰</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+        <h1 class="site-heading">Weds Story Photography</h1>
+        <div class="contact-image">
+            <img src="../asset/W1.webp" alt="Wedding Image" class="background-image">
+            <form action="https://formsubmit.co/vrindtime@gmail.com" method="post" class="contact-form">
+                <div class="form-intro">
+                    <h2 class="main-title">Let's talk!</h2>
+                    <p class="sub-title">Drop Me a Message for a Quote</p>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="E-Mail" required>
+                </div>
+                <div class="form-row">
+                    <input type="date" name="date" placeholder="DD-MM-YYYY" required>
+                    <input type="text" name="location" placeholder="Location" required>
+                </div>
+                <div class="form-row">
+                    <textarea name="message" rows="10" placeholder="Tell Us More" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">SEND</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>
