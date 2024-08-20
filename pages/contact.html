@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="initial-nav">
         <nav>
@@ -28,7 +30,12 @@
     <section class="contact-container">
         <h1 class="site-heading">Weds Story Photography</h1>
         <div class="contact-image">
-            <img src="../asset/W1.webp" alt="Wedding Image" class="background-image">
+            <picture>
+                <!-- High-resolution image for larger screens -->
+                <source media="(min-width: 768px)" srcset="../asset/W1.webp">
+                <!-- Alternative image for smaller screens -->
+                <img src="../asset/W13.JPG" alt="Wedding Image" class="background-image">
+            </picture>
             <form action="https://formsubmit.co/vrindtime@gmail.com" method="post" class="contact-form">
                 <div class="form-intro">
                     <h2 class="main-title">Let's talk!</h2>
@@ -39,20 +46,23 @@
                     <input type="email" name="email" placeholder="E-Mail" required>
                 </div>
                 <div class="form-row">
-                    <input type="date" name="date" placeholder="DD-MM-YYYY" required>
+                    <input type="date" name="date" placeholder="DD-MM-YYYY" style="color: #757575;" required>
                     <input type="text" name="location" placeholder="Location" required>
                 </div>
                 <div class="form-row">
-                    <textarea name="message" rows="10" placeholder="Tell Us More" required></textarea>
+                    <textarea name="message" rows="6" placeholder="Tell Us More" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">SEND</button>
             </form>
         </div>
     </section>
-    
+
+
 
     <footer>
         <!-- Add footer content here -->
     </footer>
+    <script src="../navbar.js"></script>
 </body>
+
 </html>
