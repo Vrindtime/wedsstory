@@ -73,165 +73,107 @@
 
         <h2 class="sub-heading">Meet Our Team</h2>
 
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <div class="carousel">
-                    <div class="card">
-                        <img src="../asset/W1.webp" alt="Person 1">
-                        <h2>Editor</h2>
-                        <p>IUHAIB</p>
+        <section class="team-carousel">
+            <div class="carousel-container">
+                <button class="prev">&lt;</button>
+                <div class="carousel-track">
+                    <div class="team-member">
+                        <img src="../asset/member/Ashwin_shaji_founder.JPG" alt="Team member">
+                        <h3>Founder</h3>
+                        <p>Ashwin Shaji</p>
                     </div>
-                    <div class="card">
-                        <img src="../asset/W1.webp" alt="Person 2">
-                        <h2>Photo Editor</h2>
-                        <p>AMAL</p>
+                    <div class="team-member">
+                        <img src="../asset/member/ibrahim_video_editor.JPG" alt="Team member">
+                        <h3>Video Editor</h3>
+                        <p>Ibrahim</p>
                     </div>
-                    <div class="card">
-                        <img src="../asset/W1.webp" alt="Person 3">
-                        <h2>Founder</h2>
-                        <p>ANAS KHAJA</p>
+                    <div class="team-member">
+                        <img src="../asset/member/mathews_manager.jpg" alt="Team member">
+                        <h3>Manager</h3>
+                        <p>Mathews</p>
                     </div>
-                    <div class="card">
-                        <img src="../asset/W1.webp" alt="Person 4">
-                        <h2>Designer</h2>
-                        <p>AKSHAY</p>
+                    <div class="team-member">
+                        <img src="../asset/member/ratheesh_videographer.jpg" alt="Team member">
+                        <h3>Videographer</h3>
+                        <p>Ratheesh</p>
                     </div>
-                    <div class="card">
-                        <img src="../asset/W1.webp" alt="Person 5">
-                        <h2>Manager</h2>
-                        <p>RAHUL</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-
-        <div class="marginTop40px" style="margin-top: 40px;"></div>
-        <div class="marginTop40px" style="margin-top: 40px;"></div>
-
-        <h2 class="sub-heading">Testimonials</h2>
-
-        <!-- <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <button class="carousel-button prev">&#8249;</button>
-                <div class="carousel">
-                    <div class="card">
-                        <p>After so many research i choose olakkuda wedding team for my cousins's wedding and i was
-                            right about choosing them.Fabulous Work.After i recieved album my whole family loved their
-                            work.I can guarantee they creates magic through camera.</p>
-                        <p>IUHAIB + ASBJSD</p>
-                    </div>
-                    <div class="card">
-                        <h2>After so many research i choose olakkuda wedding team for my cousins's wedding and i was
-                            right about choosing them.Fabulous Work.After i recieved album my whole family loved their
-                            work.I can guarantee they creates magic through camera.</h2>
-                        <p>IUHAIB + ASBJSD</p>
-                    </div>
-                    <div class="card">
-                        <h2>After so many research i choose olakkuda wedding team for my cousins's wedding and i was
-                            right about choosing them.Fabulous Work.After i recieved album my whole family loved their
-                            work.I can guarantee they creates magic through camera.</h2>
-                        <p>IUHAIB + ASBJSD</p>
-                    </div>
-                    <div class="card">
-                        <h2>After so many research i choose olakkuda wedding team for my cousins's wedding and i was
-                            right about choosing them.Fabulous Work.After i recieved album my whole family loved their
-                            work.I can guarantee they creates magic through camera.</h2>
-                        <p>IUHAIB + ASBJSD</p>
-                    </div>
-                    <div class="card">
-                        <h2>After so many research i choose olakkuda wedding team for my cousins's wedding and i was
-                            right about choosing them.Fabulous Work.After i recieved album my whole family loved their
-                            work.I can guarantee they creates magic through camera.</h2>
-                        <p>IUHAIB + ASBJSD</p>
+                    <div class="team-member">
+                        <img src="../asset/member/vishnu_photography.jpg" alt="Team member">
+                        <h3>Photographer</h3>
+                        <p>Vishnu</p>
                     </div>
                 </div>
-                <button class="carousel-button next">&#8250;</button>
+                <button class="next">&gt;</button>
             </div>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div> -->
-
-
+        </section>
     </section>
 
     <footer>
         <!-- Add footer content here -->
     </footer>
+
     <script src="../navbar.js"></script>
+
     <script>
-        let currentSlide = 0;
+        const track = document.querySelector('.carousel-track');
+        const cards = Array.from(track.children);
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
 
-        function updateCarousel() {
-            const carousel = document.querySelector('.carousel');
-            const cards = document.querySelectorAll('.card');
-            const cardWidth = document.querySelector('.card').offsetWidth;
+        let cardWidth = cards[0].getBoundingClientRect().width;
+        let cardsToShow = 0;
+        let currentIndex = 0;
 
-            carousel.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        // Set initial positions
+        const setCardPosition = (card, index) => {
+            card.style.left = (cardWidth + 40) * index + 'px';  // 40px for margins
+        };
+        cards.forEach(setCardPosition);
 
-            cards.forEach((card, index) => {
-                if (index >= currentSlide && index < currentSlide + 3) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-        }
+        // Update button visibility based on index
+        const updateButtonVisibility = () => {
+            prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+            nextButton.style.display = currentIndex >= cards.length - cardsToShow ? 'none' : 'block';
+        };
+
+        // Move to target index
+        const moveToIndex = (index) => {
+            if (index < 0) {
+                currentIndex = 0; // Prevent going back further
+            } else if (index > cards.length - cardsToShow) {
+                currentIndex = cards.length - cardsToShow; // Prevent going forward beyond the last set
+            } else {
+                currentIndex = index;
+            }
+            track.style.transform = `translateX(-${(cardWidth + 40) * currentIndex}px)`;
+            updateButtonVisibility();
+        };
+
+        // Next button click handler
+        nextButton.addEventListener('click', () => {
+            moveToIndex(currentIndex + cardsToShow);
+        });
+
+        // Previous button click handler
+        prevButton.addEventListener('click', () => {
+            moveToIndex(currentIndex - cardsToShow);
+        });
+
+        // Responsive behavior
+        const updateCarousel = () => {
+            cardWidth = cards[0].getBoundingClientRect().width;
+            cardsToShow = window.innerWidth < 600 ? 1 : 3;
+            cards.forEach(setCardPosition);
+            moveToIndex(Math.floor(currentIndex / cardsToShow) * cardsToShow);
+            updateButtonVisibility();
+        };
 
         window.addEventListener('resize', updateCarousel);
 
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-                document.querySelector('.dot.active').classList.remove('active');
-                dot.classList.add('active');
-            });
-        });
+        // Initial setup
+        updateCarousel();
+        moveToIndex(0);
 
-        function moveToNextSlide() {
-            const totalCards = document.querySelectorAll('.card').length;
-            const visibleCards = window.innerWidth < 600 ? 1 : 3;
-            if (currentSlide < totalCards - visibleCards) {
-                currentSlide++;
-            } else {
-                currentSlide = 0; // Go back to the first slide when reaching the end
-            }
-            updateCarousel();
-            updateDots();
-        }
-
-        function moveToPreviousSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-            } else {
-                const totalCards = document.querySelectorAll('.card').length;
-                const visibleCards = window.innerWidth < 600 ? 1 : 3;
-                currentSlide = totalCards - visibleCards; // Go to the last slide if at the beginning
-            }
-            updateCarousel();
-            updateDots();
-        }
-
-        function updateDots() {
-            document.querySelector('.dot.active').classList.remove('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        // Automatically scroll every 3 seconds
-        setInterval(moveToNextSlide, 3000);
     </script>
 
 </body>
