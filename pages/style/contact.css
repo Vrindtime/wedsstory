@@ -346,6 +346,8 @@ body {
 @media (max-width: 768px) {
     .site-heading {
         font-size: 1.5rem;
+        top: 12%;
+        transform: translateX(-50%);
     }
 
     .main-title {
@@ -365,6 +367,7 @@ body {
         width: 100%;
         padding: 20px;
         box-shadow: none;
+        top: 53%;
     }
 
     .form-row {
@@ -380,5 +383,26 @@ body {
     .submit-btn {
         width: 100%;
         padding: 12px 0;
+        margin-top: 2px;
+    }
+    
+}
+
+
+/* Default styles */
+textarea {
+    rows: 6;
+}
+
+/* Reduce rows on smaller screens */
+@media (max-width: 600px) {
+    textarea {
+        rows: 3;
+    }
+}
+
+@media (max-width: 400px) {
+    textarea {
+        rows: 1;
     }
 }
