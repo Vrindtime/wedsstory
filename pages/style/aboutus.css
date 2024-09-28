@@ -160,7 +160,7 @@
 }
 
 .team-member {
-    flex: 0 0 calc(33.333% - 40px);
+    flex: 0 0 calc(35% - 40px);
     margin: 0 20px;
     box-sizing: border-box;
     border: 1px solid #d8d8d873;
@@ -211,7 +211,7 @@
 }
 
 .next {
-    right: 10px;
+    right: 0px;
 }
 
 .carousel-dots {

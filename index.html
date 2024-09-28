@@ -38,8 +38,12 @@
 
         <div class="carousel">
             <img loading="lazy" src="./asset/mobile/1.webp" alt="Carousel Image 1" class="active">
-            <img loading="lazy" src="./asset/IMG_8574.webp" alt="Carousel Image 2">
-            <img loading="lazy" src="./asset/mobile/2.webp" alt="Carousel Image 3">
+            <picture>
+                <source srcset="./asset/IMG_8574_cropped.jpg" media="(max-width: 600px)">
+                <source srcset="./asset/IMG_8574.webp">
+                <img src="./asset/IMG_8574.webp" alt="Carousel Image 2">
+              </picture>
+              <img loading="lazy" src="./asset/mobile/2.webp" alt="Carousel Image 3">
         </div>
         <div class="hero-text">
             <h1>FOR CELEBRATIONS</h1>
@@ -99,27 +103,27 @@
             <i class="fa-solid fa-campground icon-custom"></i>
             <h5>OUTDOOR</h5>
             <h6>Wedding</h6>
-            <p>Moments captured in their natural ambiance, wrapped with the beauty of the celebration.</p>
+            <p>Experience the magic of love surrounded by nature's beauty, where every shot tells a story under the open sky.</p>
         </div>
         <div class="feature">
             <i class="fa-solid fa-camera icon-custom"></i>
             <h5>Destination</h5>
             <h6>Wedding</h6>
-            <p>Moments captured in their natural ambiance, wrapped with the beauty of the celebration.</p>
+            <p>Capture unforgettable moments in breathtaking locations, blending romance and adventure into stunning visual memories.</p>
         </div>
         <div class="feature">
             <i class="fa-solid fa-video icon-custom"></i>
-            <h5>videography</h5>
+            <h5>Videography</h5>
             <h6>Wedding</h6>
-            <p>Moments captured in their natural ambiance, wrapped with the beauty of the celebration.</p>
+            <p>Relive your special day through cinematic storytelling, where every glance and laughter is preserved forever.</p>
         </div>
         <div class="feature">
             <i class="fa-regular fa-eye icon-custom"></i>
             <h5>Designing</h5>
             <h6>Wedding</h6>
-            <p>Moments captured in their natural ambiance, wrapped with the beauty of the celebration.</p>
+            <p>Transform your wedding vision into reality with bespoke designs that enhance the beauty of your celebration.</p>
         </div>
-    </div>
+    </div>    
 
     <div class="video-section">
         <h1 class="h2_custom">
@@ -246,9 +250,15 @@
             <div class="footer-section follow">
                 <h6>FOLLOW US</h6>
                 <div class="social-icons">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-youtube"></i>
+                    <!-- <a href="" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a> -->
+                    <a href="https://www.instagram.com/weds_stories_/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@WedsStory-c4j" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
                 </div>
             </div>
 
