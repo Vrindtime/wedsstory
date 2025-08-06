@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEDS STORY PHOTOGRAPHY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="./bento-style.css">
+    <link rel="stylesheet" href="./video-style.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" type="image/png" href="./asset/LOGO.png">
+    <style>
+        .initial-nav {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <header class="initial-nav">
+            <nav>
+                <img src="./asset/wedstoriesLogo.png" alt="logo" width="150px" height="150px">
+                <div class="menu-icon" onclick="toggleMenu()">MENU ☰</div>
+                <ul class="nav-links">
+                    <li><a href="./" class="active">HOME</a></li>
+                    <li><a href="./pages/gallery.html">GALLERY</a></li>
+                    <li><a href="./pages/aboutus.html">ABOUT US</a></li>
+                    <li><a href="./pages/contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="carousel">
+            <img loading="lazy" src="./asset/mobile/1.webp" alt="Carousel Image 1" class="active">
+            <picture>
+                <source srcset="./asset/IMG_8574_cropped.jpg" media="(max-width: 600px)">
+                <source srcset="./asset/IMG_8574.webp">
+                <img src="./asset/IMG_8574" alt="Carousel Image 2">
+              </picture>
+              <img loading="lazy" src="./asset/mobile/2.webp" alt="Carousel Image 3">
+        </div>
+        <div class="hero-text">
+            <h1>FOR CELEBRATIONS</h1>
+            <p>For your moments, narrates your story.</p>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text_padding">
+            <h1 class="h1_custom">
+                RARE AND REAL MOMENTS
+            </h1>
+            <p class="p_custom">
+                Wedding photography that captures the true essence of the moment
+            </p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/mobile/3.webp" alt="Image 1">
+                    <div class="image-caption">Moments of Happiness</div>
+                </div>
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/mobile/2.webp" alt="Image 2">
+                    <div class="image-caption">Capturing Fun</div>
+                </div>
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/W12_2.webp" alt="Image 3">
+                    <div class="image-caption">Unlimited Celebrations</div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/webp/updated/IMG_6654.webp" alt="Image 4">
+                    <div class="image-caption">Hidden Emotions</div>
+                </div>
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/webp/updated/JSV01304.webp" alt="Image 5">
+                    <div class="image-caption">True Shades of Love</div>
+                </div>
+                <div class="gallery-item">
+                    <img loading="lazy" src="./asset/webp/updated/LP_01374a.webp" alt="Image 6">
+                    <div class="image-caption">Elegant Wedding Saga</div>
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="sizedBox" style="height: 1vh"></div>
+
+    <div class="features">
+        <div class="feature">
+            <i class="fa-solid fa-campground icon-custom"></i>
+            <h5>OUTDOOR</h5>
+            <h6>Wedding</h6>
+            <p>Experience the magic of love surrounded by nature's beauty, where every shot tells a story under the open sky.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-camera icon-custom"></i>
+            <h5>Destination</h5>
+            <h6>Wedding</h6>
+            <p>Capture unforgettable moments in breathtaking locations, blending romance and adventure into stunning visual memories.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-solid fa-video icon-custom"></i>
+            <h5>Videography</h5>
+            <h6>Wedding</h6>
+            <p>Relive your special day through cinematic storytelling, where every glance and laughter is preserved forever.</p>
+        </div>
+        <div class="feature">
+            <i class="fa-regular fa-eye icon-custom"></i>
+            <h5>Designing</h5>
+            <h6>Wedding</h6>
+            <p>Transform your wedding vision into reality with bespoke designs that enhance the beauty of your celebration.</p>
+        </div>
+    </div>    
+
+    <div class="video-section">
+        <h1 class="h2_custom">
+            Live your magic and save your precious love memories! Our team of professional photographers is here to help
+            you.
+        </h1>
+        <a href="https://www.youtube.com/watch?v=1KuajEBJdQM" target="_blank">
+            <div class="tumbnail">
+                <img src="./asset/couple.webp" alt="video-tumbnail" width="100%" height="100%">
+                <div class="overlay">
+                    <button class="play-button" onclick="showVideo()">
+
+                        <i class="fas fa-play play-button-hover"></i>
+
+                    </button>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="sizedBox" style="height: 4vh"></div>
+
+    <div class="container-bento">
+        <div class="bento">
+            <figure class="bento__item bento__item--1">
+                <img src="./asset/mobile/1.webp" class="bento__img" alt="Image 1" loading="lazy">
+            </figure>
+            <figure class="bento__item bento__item--2">
+                <img src="./asset/webp/IMG_8600.webp" class="bento__img" alt="Image 2" loading="lazy">
+            </figure>
+            <figure class="bento__item bento__item--3">
+                <img src="./asset/mobile/3.webp" class="bento__img" alt="Image 3" loading="lazy">
+            </figure>
+            <figure class="bento__item bento__item--4">
+                <img src="./asset/webp/IMG_5561.webp" class="bento__img" alt="Image 4" loading="lazy">
+            </figure>
+            <figure class="bento__item bento__item--5">
+                <img src="./asset/webp/IMG_8139.webp" class="bento__img" alt="Image 5" loading="lazy">
+            </figure>
+            <figure class="bento__item bento__item--6">
+                <img src="./asset/W2.webp" class="bento__img" alt="Image 6" loading="lazy">
+            </figure>
+        </div>
+    </div>
+
+    <div class="sizedBox" style="height: 2vh"></div>
+
+    <div class="text_padding">
+        <h1 class="h1_custom">
+            HEAR IT FROM THEM
+        </h1>
+        <p class="p_custom">
+            Your happiness is all that matters to us!
+        </p>
+    </div>
+
+    <div class="sizedBox" style="height: 4vh;"></div>
+
+    <div class="carousel-review">
+        <div class="carousel-review-inner">
+            <!-- Review 1 -->
+            <div class="review active">
+                <div class="reviews">
+                    <img src="./asset/W1.webp" alt="Wedding Photo" class="animate__animated animate__fadeInLeft">
+                    <div class="review-content animate__animated animate__fadeInRight">
+                        <!-- <h6 class="review-date">Aug 29, 2024</h6> -->
+                        <p>
+                            They create magic. The whole team has captured the most special moments of my wedding...
+                        </p>
+                        <!-- <h6 class="review-names">ARUN + DEVI</h6> -->
+                        <div class="carousel-review-controls">
+                            <button class="carousel-review-control-prev" onclick="prevReview()">&#10094;</button>
+                            <span class="review-counter">01 / 03</span>
+                            <button class="carousel-review-control-next" onclick="nextReview()">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review">
+                <div class="reviews">
+                    <img src="./asset/W2.webp" alt="Wedding Photo" class="animate__animated animate__fadeInLeft">
+                    <div class="review-content animate__animated animate__fadeInRight">
+                        <!-- <h6 class="review-date">Sep 15, 2024</h6> -->
+                        <p>
+                            Wonderful experience! The photography was perfect...
+                        </p>
+                        <!-- <h6 class="review-names">RAHUL + PRIYA</h6> -->
+                        <div class="carousel-review-controls">
+                            <button class="carousel-review-control-prev" onclick="prevReview()">&#10094;</button>
+                            <span class="review-counter">02 / 03</span>
+                            <button class="carousel-review-control-next" onclick="nextReview()">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review">
+                <div class="reviews">
+                    <img src="./asset/W3.webp" alt="Wedding Photo" class="animate__animated animate__fadeInLeft">
+                    <div class="review-content animate__animated animate__fadeInRight">
+                        <!-- <h6 class="review-date">Oct 10, 2024</h6> -->
+                        <p>
+                            Best decision ever to go with this team...
+                        </p>
+                        <!-- <h6 class="review-names">VISHAL + AISHWARYA</h6> -->
+                        <div class="carousel-review-controls">
+                            <button class="carousel-review-control-prev" onclick="prevReview()">&#10094;</button>
+                            <span class="review-counter">03 / 03</span>
+                            <button class="carousel-review-control-next" onclick="nextReview()">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sizedBox" style="height: 8vh;"></div>
+
+    <div class="center">
+        <div class="footer">
+            <div class="footer-section follow">
+                <h6>FOLLOW US</h6>
+                <div class="social-icons">
+                    <!-- <a href="" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a> -->
+                    <a href="https://www.instagram.com/wed_storyphotography?igsh=dG44amphZmt0bTJ6" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@WedsStory-c4j" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section separator"></div> <!-- Vertical line separator -->
+
+            <div class="footer-section links">
+                <h6>GALLERY</h6>
+                <div class="link-grid">
+                    <a href="./index.html">HOME</a>
+                    <a href="./pages/gallery.html">GALLERY</a>
+                    <a href="./pages/aboutus.html">ABOUT US</a>
+                    <a href="./pages/contact.html">CONTACT</a>
+                </div>
+            </div>
+
+            <div class="footer-section separator"></div> <!-- Vertical line separator -->
+
+            <div class="footer-section contact">
+                <h6>CONTACT</h6>
+                <p>Phone:+91 7034524924</p>
+                <p>alt-Phone: +91 6282063140 </p>
+                <p>EU-Phone: Comming soon </p>
+                <p>Email: wedsstory24@gmail.com</p>
+                <!-- <p>© 2024 by Weds Story</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts.js"></script>
+    <script src="navbar.js"></script>
+</body>
+
+</html>
