@@ -282,19 +282,29 @@
       .featured-couples-section {
         padding: 100px 0;
         background: white;
+        max-width: 1400px;
+        margin: 0 auto;
       }
-
+      .featured-couples-section .h1_custom {
+        font-size: 3.5rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: "Cormorant Garamond", serif;
+        position: relative;
+      }
       .dynamic-couples-layout {
         display: grid;
-        grid-template-columns: repeat(13, 1fr);
-        grid-template-rows: repeat(10, 130px);
-        gap: 18px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 480px);
+        gap: 12px;
         max-width: 1400px;
-        min-height: 1000px;
+        /* min-height: 1000px; */
         margin: 0 auto;
         padding: 0 40px;
       }
-
       .couple-card {
         position: relative;
         border-radius: 12px;
@@ -304,63 +314,24 @@
         opacity: 0;
         transform: translateY(50px);
       }
-
       .couple-card.animate-in {
         opacity: 1;
         transform: translateY(0);
       }
-
       .couple-card:hover {
         transform: translateY(-10px) scale(1.02);
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         z-index: 10;
       }
-
-      /* Large Landscape - Takes up most space */
-      /* Completely Non-Overlapping Grid Positions */
-      .couple-card.large-landscape {
-        grid-column: 1 / 9; /* Takes columns 1-6 */
-        grid-row: 1 / 6; /* Takes rows 1-5 */
-      }
-
-      .couple-card.portrait {
-        grid-column: 7 / 10; /* Takes columns 7-9 */
-        grid-row: 1 / 8; /* Takes rows 1-7 */
-      }
-
-      .couple-card.square {
-        grid-column: 9 / 15; /* Takes columns 10-12 */
-        grid-row: 2 / 7; /* Takes rows 1-4 */
-      }
-
-      .couple-card.wide-portrait {
-        grid-column: 1 / 8; /* Takes columns 1-4 */
-        grid-row: 6 / 13; /* Takes rows 6-9 */
-      }
-
-      .couple-card.medium-landscape {
-        grid-column: 8 / 15; /* Takes columns 5-12 */
-        grid-row: 7 / 12; /* Takes rows 8-11 */
-      }
-
-      .couple-image {
+      .couple-card img {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .couple-image img {
-        width: 100%;
-        height: 100%;
+        height: 480px;
         object-fit: cover;
         transition: transform 0.4s ease;
       }
-
-      .couple-card:hover .couple-image img {
+      .couple-card:hover img {
         transform: scale(1.1);
       }
-
-      /* Fixed Overlay - Always Visible */
       .couple-overlay {
         position: absolute;
         bottom: 0;
@@ -373,13 +344,6 @@
         opacity: 1;
         transform: translateY(0);
         transition: all 0.3s ease;
-      }
-
-      .couple-card:hover .couple-overlay {
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-      }
-
-      .couple-overlay .couple-names {
         font-family: "Cormorant Garamond", serif;
         font-size: 1.2rem;
         font-weight: 500;
@@ -387,13 +351,62 @@
         letter-spacing: 1.5px;
         text-transform: uppercase;
       }
+      .couple-card:nth-child(2n) {
+        margin-top: 0;
+      }
+      .couple-card:nth-child(n + 3) {
+        margin-top: 1vh;
+      }
+      @media (max-width: 700px) {
+        .featured-couples-section {
+          padding: 18px 2vw 22px 2vw;
+        }
+        .featured-couples-section .h1_custom {
+          font-size: 1.5rem;
+        }
+        .dynamic-couples-layout {
+          gap: 24px 12px;
+        }
+        .couple-card {
+          border-radius: 8px;
+          height: 480px;
+        }
+        .couple-card:nth-child(2n) {
+          margin-top: 28px;
+        }
+        .couple-card:nth-child(n + 3) {
+          margin-top: -2vh;
+        }
+        .couple-overlay {
+          font-size: 0.98rem;
+          padding: 8px 12px 11px;
+          text-align: center;
+          font-family: "Cormorant Garamond", serif;
+          font-weight: 500;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+        }
+      }
+      @media (max-width: 480px) {
+        .dynamic-couples-layout {
+          grid-template-columns: 1fr;
+        }
+        .couple-card,
+        .couple-card:nth-child(2n) {
+          margin-top: 0 !important;
+        }
+        .couple-card {
+          aspect-ratio: 6/7;
+          /* height: 320px; */
+        }
+        .couple-card img {
+          height: 480px;
+        }
+      }
 
-      .couple-overlay .couple-type {
-        font-family: "Mulish", sans-serif;
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.9);
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      /* Only on desktop (default grid: 3 columns) */
+      .couple-card.down {
+        transform: translateY(64px);
       }
 
       /* Enhanced Testimonials with Navigation */
@@ -535,33 +548,35 @@
         }
 
         .dynamic-couples-layout {
-          grid-template-columns: repeat(6, 1fr);
-          grid-template-rows: repeat(12, 60px);
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          /* gap: 28px 12px; */
+          /* padding: 0 8px; */
         }
-
-        .couple-card.large-landscape {
-          grid-column: 1 / 7;
-          grid-row: 1 / 4;
+        .couple-card {
+          height: 480px;
+          border-radius: 8px;
+          background: #fff;
+          box-sizing: border-box;
+          /* margin-top removed, no margin */
         }
-
-        .couple-card.portrait {
-          grid-column: 1 / 4;
-          grid-row: 4 / 8;
+        .dynamic-couples-layout .couple-card:nth-child(2n) {
+          transform: translateY(128px); /* Stagger right images visually */
         }
-
-        .couple-card.square {
-          grid-column: 4 / 7;
-          grid-row: 4 / 7;
+        .dynamic-couples-layout .couple-card:nth-child(3n) {
+          height: 480px; /* Optional: vary card heights for more organic look */
         }
-
-        .couple-card.wide-portrait {
-          grid-column: 4 / 7;
-          grid-row: 7 / 10;
+        .couple-image {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: stretch;
         }
-
-        .couple-card.medium-landscape {
-          grid-column: 1 / 7;
-          grid-row: 8 / 11;
+        .couple-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
         }
       }
 
@@ -626,14 +641,41 @@
         }
 
         .dynamic-couples-layout {
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-          padding: 0 20px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px 12px;
+          padding: 0 6px;
         }
 
         .couple-card {
-          height: 300px;
+          height: 480px;
+          border-radius: 8px;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        /* Stagger cards for organic look */
+        .dynamic-couples-layout .couple-card:nth-child(2n) {
+          margin-top: -28px;
+        }
+        .dynamic-couples-layout .couple-card:nth-child(3n) {
+          height: 480px;
+        }
+        .dynamic-couples-layout .couple-card:nth-child(4n) {
+          height: 480px;
+        }
+        .couple-image {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: stretch;
+        }
+        .couple-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          aspect-ratio: 3/4;
+          min-height: 180px;
+          max-height: 100%;
         }
 
         .couple-overlay {
@@ -735,7 +777,10 @@
         </div>
 
         <div class="couple-item">
-          <img src="./asset/webp/gallery/may/IMG_5368.webp" alt="Wedding Couple" />
+          <img
+            src="./asset/webp/gallery/may/IMG_5368.webp"
+            alt="Wedding Couple"
+          />
           <div class="couple-names">
             <!-- <h3>RAHUL & PRIYA</h3> -->
             <p>Paradise Beach Wedding</p>
@@ -858,7 +903,10 @@
           </p>
         </div>
         <div class="story-image">
-          <img src="../asset/webp/gallery/may/IMG_5633.webp" alt="Timeless Wedding Memories" />
+          <img
+            src="../asset/webp/gallery/may/IMG_5633.webp"
+            alt="Timeless Wedding Memories"
+          />
         </div>
       </div>
     </div>
@@ -886,78 +934,33 @@
 
     <div class="sizedBox" style="height: 4vh"></div>
 
-    <!-- New Dynamic Featured Couples Showcase - Less Boxy, More Organic -->
+    <!-- New Dynamic Featured Couples Showcase - Zig Zag Grid -->
     <div class="featured-couples-section">
-      <div class="text_padding">
-        <h1 class="h1_custom">FEATURED STORIES</h1>
-        <p class="p_custom">
-          Showcasing our most memorable wedding celebrations
-        </p>
-      </div>
-
+      <h1 class="h1_custom">FEATURED STORIES</h1>
       <div class="dynamic-couples-layout">
-        <!-- Large Landscape Card -->
         <div class="couple-card large-landscape">
-          <div class="couple-image">
-            <img src="./asset/imagecompressor/p2.jpg" alt="Featured Wedding Couple" />
-          </div>
-          <div class="couple-overlay">
-            <div class="couple-names">PRASANTH & NIKITHA</div>
-            <!-- <div class="couple-type">Traditional Kerala Wedding</div> -->
-          </div>
+          <img src="./asset/imagecompressor/p2.jpg" alt="Prasanth & Nikitha" />
+          <div class="couple-overlay">Prasanth & Nikitha</div>
         </div>
-
-        <!-- Portrait Card -->
-        <!-- <div class="couple-card portrait">
-          <div class="couple-image">
-            <img
-              src="./asset/webp/IMG_8600.webp"
-              alt="Featured Wedding Couple"
-            />
-          </div>
-          <div class="couple-overlay">
-            <div class="couple-names">AISWRYA & SAIKUMAR</div>
-            <div class="couple-type">Temple Wedding</div>
-          </div>
-        </div> -->
-
-        <!-- Square Card -->
-        <div class="couple-card square">
-          <div class="couple-image">
-            <img
-              src="./asset/test/gallery/IMG_4158_6.JPG"
-              alt="Featured Wedding Couple"
-            />
-          </div>
-          <div class="couple-overlay">
-            <div class="couple-names">ARJUN & MEERA</div>
-            <!-- <div class="couple-type">Garden Wedding</div> -->
-          </div>
+        <div class="couple-card down">
+          <img src="./asset/test/gallery/IMG_4158_6.JPG" alt="Arjun & Meera" />
+          <div class="couple-overlay">Arjun & Meera</div>
         </div>
-
-        <!-- Wide Portrait -->
         <div class="couple-card wide-portrait">
-          <div class="couple-image">
-            <img src="./asset/W2.webp" alt="Featured Wedding Couple" />
-          </div>
-          <div class="couple-overlay">
-            <div class="couple-names">RAVI & KAVITHA</div>
-            <!-- <div class="couple-type">Palace Wedding</div> -->
-          </div>
+          <img src="./asset/webp/gallery/IMG_4279_4.webp" alt="Ravi & Kavitha" />
+          <div class="couple-overlay">Ravi & Kavitha</div>
         </div>
-
-        <!-- Medium Landscape -->
-        <div class="couple-card medium-landscape">
-          <div class="couple-image">
-            <img
-              src="./asset/aug/IMG_4257.webp"
-              alt="Featured Wedding Couple"
-            />
-          </div>
-          <div class="couple-overlay">
-            <div class="couple-names">KIRAN & MEERA</div>
-            <!-- <div class="couple-type">Beach Wedding</div> -->
-          </div>
+        <div class="couple-card wide-portrait">
+          <img src="./asset/webp/gallery/may/IMG_5660.webp" alt="Ravi & Kavitha" />
+          <div class="couple-overlay">VISHAL & AISHWARYA</div>
+        </div>
+        <div class="couple-card down">
+          <img src="./asset/webp/gallery/may/IMG_5642.webp" alt="Arjun & Kavya" />
+          <div class="couple-overlay">Arjun & Kavya</div>
+        </div>
+        <div class="couple-card">
+          <img src="./asset/imagecompressor/p4.jpg" alt="Kiran & Meera" />
+          <div class="couple-overlay">Kiran & Meera</div>
         </div>
       </div>
     </div>
@@ -1107,7 +1110,7 @@
 
     <script src="scripts.js"></script>
     <script src="navbar.js"></script>
-    <script src="protection.js"></script>
+    <!-- <script src="protection.js"></script> -->
     <script>
       // Intersection Observer for Text Animations
       const observerOptions = {
@@ -1202,5 +1205,195 @@
         }
       }
     </script>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
