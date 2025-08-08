@@ -23,6 +23,15 @@
         background-color: transparent;
         box-shadow: none;
       }
+      
+      .sizedBox {
+        height: 10vh;
+      }
+      @media (max-width: 700px) {
+        .sizedBox {
+          height: 2vh !important;
+        }
+      }
 
       /* Enhanced Typography with Working Animations */
       .h1_custom {
@@ -298,7 +307,7 @@
       .dynamic-couples-layout {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 480px);
+        grid-template-rows: repeat(2, 480px);
         gap: 12px;
         max-width: 1400px;
         /* min-height: 1000px; */
@@ -394,13 +403,13 @@
         .couple-card,
         .couple-card:nth-child(2n) {
           margin-top: 0 !important;
+          height: 360px !important;
         }
-        .couple-card {
-          aspect-ratio: 6/7;
-          /* height: 320px; */
-        }
+        /* .dynamic-couples-layout .couple-card:nth-child(3n) {
+        height: 360px;
+        } */
         .couple-card img {
-          height: 480px;
+          height: 360px;
         }
       }
 
@@ -643,8 +652,11 @@
         .dynamic-couples-layout {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(4,1fr);
           gap: 32px 12px;
           padding: 0 6px;
+          max-height: 150vh;
+          margin-top: 3vh;
         }
 
         .couple-card {
@@ -759,68 +771,39 @@
     </div>
 
     <!-- Enhanced Couples Gallery Section -->
-    <div class="couples-gallery">
-      <div class="text_padding">
-        <h1 class="h1_custom">OUR COUPLES</h1>
-        <p class="p_custom">
-          Beautiful stories we've had the privilege to capture
-        </p>
-      </div>
-
-      <div class="couples-grid">
-        <div class="couple-item">
-          <img src="./asset/mobile/1.webp" alt="Wedding Couple" />
-          <div class="couple-names">
-            <!-- <h3>ARUN & DEVI</h3> -->
-            <p>Classic Indoor Ceremony</p>
-          </div>
+     <!-- New Dynamic Featured Couples Showcase - Zig Zag Grid -->
+    <div class="featured-couples-section">
+      <h1 class="h1_custom">FEATURED STORIES</h1>
+      <div class="dynamic-couples-layout">
+        <div class="couple-card large-landscape">
+          <img src="./asset/imagecompressor/p2.jpg" alt="Prasanth & Nikitha" />
+          <div class="couple-overlay">Prasanth & Nikitha</div>
         </div>
-
-        <div class="couple-item">
-          <img
-            src="./asset/webp/gallery/may/IMG_5368.webp"
-            alt="Wedding Couple"
-          />
-          <div class="couple-names">
-            <!-- <h3>RAHUL & PRIYA</h3> -->
-            <p>Paradise Beach Wedding</p>
-          </div>
+        <div class="couple-card down">
+          <img src="./asset/test/gallery/IMG_4158_6.JPG" alt="Arjun & Meera" />
+          <div class="couple-overlay">Arjun & Meera</div>
         </div>
-
-        <div class="couple-item">
-          <img src="./asset/W12_2.webp" alt="Wedding Couple" />
-          <div class="couple-names">
-            <!-- <h3>VISHAL & AISHWARYA</h3> -->
-            <p>Rustic Garden Celebration</p>
-          </div>
+        <div class="couple-card wide-portrait">
+          <img src="./asset/webp/gallery/IMG_4279_4.webp" alt="Ravi & Kavitha" />
+          <div class="couple-overlay">Ravi & Kavitha</div>
         </div>
-
-        <div class="couple-item">
-          <img src="./asset/webp/updated/IMG_6654.webp" alt="Wedding Couple" />
-          <div class="couple-names">
-            <!-- <h3>KIRAN & MEERA</h3> -->
-            <p>Vintage Theme Wedding</p>
-          </div>
+        <div class="couple-card wide-portrait">
+          <img src="./asset/webp/gallery/may/IMG_5660.webp" alt="Ravi & Kavitha" />
+          <div class="couple-overlay">VISHAL & AISHWARYA</div>
         </div>
-
-        <div class="couple-item">
-          <img src="./asset/aug/IMG_6439.webp" alt="Wedding Couple" />
-          <div class="couple-names">
-            <!-- <h3>RAVI & SUNITA</h3> -->
-            <p>Outdoor Nature Wedding</p>
-          </div>
+        <div class="couple-card down">
+          <img src="./asset/webp/gallery/may/IMG_5642.webp" alt="Arjun & Kavya" />
+          <div class="couple-overlay">Arjun & Kavya</div>
         </div>
-
-        <div class="couple-item">
-          <img src="./asset/webp/updated/LP_01374a.webp" alt="Wedding Couple" />
-          <div class="couple-names">
-            <!-- <h3>ARJUN & KAVYA</h3> -->
-            <p>Forest Theme Wedding</p>
-          </div>
+        <div class="couple-card">
+          <img src="./asset/imagecompressor/p4.jpg" alt="Kiran & Meera" />
+          <div class="couple-overlay">Kiran & Meera</div>
         </div>
       </div>
     </div>
 
+    <div class="sizedBox" style="height: 10vh"></div>
+    
     <!-- Storytelling Section 2 -->
     <div class="story-section">
       <div class="story-block reverse">
@@ -935,33 +918,65 @@
 
     <div class="sizedBox" style="height: 4vh"></div>
 
-    <!-- New Dynamic Featured Couples Showcase - Zig Zag Grid -->
-    <div class="featured-couples-section">
-      <h1 class="h1_custom">FEATURED STORIES</h1>
-      <div class="dynamic-couples-layout">
-        <div class="couple-card large-landscape">
-          <img src="./asset/imagecompressor/p2.jpg" alt="Prasanth & Nikitha" />
-          <div class="couple-overlay">Prasanth & Nikitha</div>
+    <!-- New strory area -->
+    <div class="couples-gallery">
+      <div class="text_padding">
+        <h1 class="h1_custom">STORIES</h1>
+        <p class="p_custom">
+          Beautiful stories we've had the privilege to capture
+        </p>
+      </div>
+
+      <div class="couples-grid">
+        <div class="couple-item">
+          <img src="./asset/mobile/1.webp" alt="Wedding Couple" />
+          <div class="couple-names">
+            <!-- <h3>ARUN & DEVI</h3> -->
+            <p>Classic Indoor Ceremony</p>
+          </div>
         </div>
-        <div class="couple-card down">
-          <img src="./asset/test/gallery/IMG_4158_6.JPG" alt="Arjun & Meera" />
-          <div class="couple-overlay">Arjun & Meera</div>
+
+        <div class="couple-item">
+          <img
+            src="./asset/webp/gallery/may/IMG_5368.webp"
+            alt="Wedding Couple"
+          />
+          <div class="couple-names">
+            <!-- <h3>RAHUL & PRIYA</h3> -->
+            <p>Paradise Beach Wedding</p>
+          </div>
         </div>
-        <div class="couple-card wide-portrait">
-          <img src="./asset/webp/gallery/IMG_4279_4.webp" alt="Ravi & Kavitha" />
-          <div class="couple-overlay">Ravi & Kavitha</div>
+
+        <div class="couple-item">
+          <img src="./asset/W12_2.webp" alt="Wedding Couple" />
+          <div class="couple-names">
+            <!-- <h3>VISHAL & AISHWARYA</h3> -->
+            <p>Rustic Garden Celebration</p>
+          </div>
         </div>
-        <div class="couple-card wide-portrait">
-          <img src="./asset/webp/gallery/may/IMG_5660.webp" alt="Ravi & Kavitha" />
-          <div class="couple-overlay">VISHAL & AISHWARYA</div>
+
+        <div class="couple-item">
+          <img src="./asset/webp/updated/IMG_6654.webp" alt="Wedding Couple" />
+          <div class="couple-names">
+            <!-- <h3>KIRAN & MEERA</h3> -->
+            <p>Vintage Theme Wedding</p>
+          </div>
         </div>
-        <div class="couple-card down">
-          <img src="./asset/webp/gallery/may/IMG_5642.webp" alt="Arjun & Kavya" />
-          <div class="couple-overlay">Arjun & Kavya</div>
+
+        <div class="couple-item">
+          <img src="./asset/aug/IMG_6439.webp" alt="Wedding Couple" />
+          <div class="couple-names">
+            <!-- <h3>RAVI & SUNITA</h3> -->
+            <p>Outdoor Nature Wedding</p>
+          </div>
         </div>
-        <div class="couple-card">
-          <img src="./asset/imagecompressor/p4.jpg" alt="Kiran & Meera" />
-          <div class="couple-overlay">Kiran & Meera</div>
+
+        <div class="couple-item">
+          <img src="./asset/webp/updated/LP_01374a.webp" alt="Wedding Couple" />
+          <div class="couple-names">
+            <!-- <h3>ARJUN & KAVYA</h3> -->
+            <p>Forest Theme Wedding</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1207,6 +1222,120 @@
       }
     </script>
   <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
