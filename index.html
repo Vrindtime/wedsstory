@@ -330,8 +330,8 @@
       /* Stories Section */
       .stories {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 40px;
         max-width: 1200px;
         margin: 50px auto;
         padding: 0 20px;
@@ -363,8 +363,13 @@
       }
       .portrait {
         grid-column: span 1;
-        height: 500px;
-        aspect-ratio: unset;
+        height: 680px;
+        aspect-ratio: 3/4;
+        background: #f8f8f8;
+      }
+      /* Stagger right column */
+      .stories .story:nth-child(odd):not(.h1_custom) {
+        margin-top: 60px;
       }
       .story-caption {
         font-size: 1.4rem;
@@ -383,7 +388,7 @@
       }
       @media (min-width: 1025px) {
         .story:nth-child(even) {
-          margin-top: 40px;
+          margin-top: -30px;
         }
       }
       .story h3 {
@@ -523,6 +528,75 @@
         gap: 6px;
         font-size: 0.9rem;
       }
+
+      @media (max-width: 768px) {
+        .parallax-content {
+          max-width: 700px;
+          padding: 0vh 5vw;
+        }
+        .btn {
+          display: inline-block;
+          padding: 2vh 2vh;
+          border: 1px solid white;
+          color: white;
+          text-decoration: none;
+          font-family: "Cormorant Garamond", serif;
+          font-size: 1.8rem;
+          background: transparent;
+          transition: all 0.3s ease;
+        }
+        .stories {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 36px 7vw;
+          margin: 50px auto;
+          padding: 0 20px;
+          position: relative;
+        }
+        .portrait {
+          grid-column: span 1;
+          height: 260px;
+          aspect-ratio: 4 / 6;
+          background: #f8f8f8;
+        }
+        .p_custom {
+          font-size: 1.8em;
+        }
+        .h1_custom {
+          grid-column: 1 / -1;
+          text-align: center;
+          font-size: clamp(2.4rem, 6vw, 4.5rem);
+          font-weight: 500;
+          margin-bottom: 40px;
+          margin-top: 0;
+          letter-spacing: 2px;
+        }
+        .testimonials-container {
+          position: relative;
+          max-width: 1000px;
+          padding: 0vh 2vw;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+        .testimonial-card {
+          display: flex;
+          background: white;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          min-width: 100%;
+          flex-direction: column;
+          padding: 0vh 2vw;
+        }
+        .footer-container {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          max-width: 1200px;
+          margin: auto;
+          text-align: center;
+          align-items: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -601,7 +675,7 @@
     <!-- Stories Section -->
     <section class="stories">
       <h1 class="h1_custom">STORIES</h1>
-      <div class="story landscape">
+      <div class="story portrait">
         <img src="./asset/webp/IMG_8139.webp" alt="Story 1" />
         <div class="story-caption">Prasanth x Nikitha</div>
       </div>
@@ -609,7 +683,7 @@
         <img src="./asset/IMG_8574_cropped.jpg" alt="Story 2" />
         <div class="story-caption">Aiswarya x Saikumar</div>
       </div>
-      <div class="story landscape">
+      <div class="story portrait">
         <img src="./asset/couple.webp" alt="Story 3" />
         <div class="story-caption">Rahul x Anjali</div>
       </div>
@@ -617,7 +691,7 @@
         <img src="./asset/DSC09996.webp" alt="Story 4" />
         <div class="story-caption">Rohan x Priya</div>
       </div>
-      <div class="story landscape">
+      <div class="story portrait">
         <img src="./asset/imagecompressor/p2.jpg" alt="Story 5" />
         <div class="story-caption">Vikram x Shweta</div>
       </div>
