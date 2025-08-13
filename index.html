@@ -91,6 +91,7 @@
         height: 100%;
         object-fit: cover;
         max-height: 350px;
+        padding: 0.5vw;
       }
       .testimonial-nav {
         position: absolute;
@@ -717,15 +718,17 @@
           What our couples say about their experience with us
         </p>
       </div>
+
+
       <div class="testimonials-container">
-        <button
+        <!-- <button
           class="testimonial-nav testimonial-prev"
           onclick="prevTestimonial()"
         >
           <i class="fas fa-chevron-left"></i>
-        </button>
+        </button> -->
         <div class="testimonials-wrapper" id="testimonialsWrapper">
-          <div class="testimonial-card">
+          <!-- <div class="testimonial-card">
             <div class="testimonial-content">
               <p>
                 "They create magic. The whole team has captured the most special
@@ -742,7 +745,7 @@
             <div class="testimonial-image">
               <img src="./asset/W1.webp" alt="Wedding Photo" />
             </div>
-          </div>
+          </div> -->
           <div class="testimonial-card">
             <div class="testimonial-content">
               <p>
@@ -753,14 +756,14 @@
               </p>
               <div class="client-info">
                 <h4>RAHUL & PRIYA</h4>
-                <span>Destination Wedding</span>
+                <!-- <span>Destination Wedding</span> -->
               </div>
             </div>
             <div class="testimonial-image">
               <img src="./asset/W2.webp" alt="Wedding Photo" />
             </div>
           </div>
-          <div class="testimonial-card">
+          <!-- <div class="testimonial-card">
             <div class="testimonial-content">
               <p>
                 "Best decision ever to go with this team for our wedding
@@ -776,9 +779,9 @@
             <div class="testimonial-image">
               <img src="./asset/W3.webp" alt="Wedding Photo" />
             </div>
-          </div>
+          </div> -->
         </div>
-        <button
+        <!-- <button
           class="testimonial-nav testimonial-next"
           onclick="nextTestimonial()"
         >
@@ -797,7 +800,7 @@
             class="testimonial-indicator"
             onclick="currentTestimonial(2)"
           ></div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -817,7 +820,7 @@
           </a>
         </div>
         <div class="footer-section">
-          <img src="./asset/LOGO.png" alt="Logo" height="150px" />
+          <img src="./asset/LOGO.png" alt="Logo" height="80vw" />
         </div>
         <div class="footer-section">
           <h4>Get in Touch</h4>
@@ -848,69 +851,69 @@
         });
 
       // Testimonials Navigation Logic (from index.html)
-      let currentTestimonialIndex = 0;
-      const testimonials = document.querySelectorAll(".testimonial-card");
-      const totalTestimonials = testimonials.length;
+      // let currentTestimonialIndex = 0;
+      // const testimonials = document.querySelectorAll(".testimonial-card");
+      // const totalTestimonials = testimonials.length;
 
-      function showTestimonial(index) {
-        const wrapper = document.getElementById("testimonialsWrapper");
-        const translateX = -index * 100;
-        wrapper.style.transform = `translateX(${translateX}%)`;
-        // Update indicators
-        document
-          .querySelectorAll(".testimonial-indicator")
-          .forEach((indicator, i) => {
-            indicator.classList.toggle("active", i === index);
-          });
-      }
+      // function showTestimonial(index) {
+      //   const wrapper = document.getElementById("testimonialsWrapper");
+      //   const translateX = -index * 100;
+      //   wrapper.style.transform = `translateX(${translateX}%)`;
+      //   // Update indicators
+      //   document
+      //     .querySelectorAll(".testimonial-indicator")
+      //     .forEach((indicator, i) => {
+      //       indicator.classList.toggle("active", i === index);
+      //     });
+      // }
 
-      function nextTestimonial() {
-        currentTestimonialIndex =
-          (currentTestimonialIndex + 1) % totalTestimonials;
-        showTestimonial(currentTestimonialIndex);
-      }
+      // function nextTestimonial() {
+      //   currentTestimonialIndex =
+      //     (currentTestimonialIndex + 1) % totalTestimonials;
+      //   showTestimonial(currentTestimonialIndex);
+      // }
 
-      function prevTestimonial() {
-        currentTestimonialIndex =
-          (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
-        showTestimonial(currentTestimonialIndex);
-      }
+      // function prevTestimonial() {
+      //   currentTestimonialIndex =
+      //     (currentTestimonialIndex - 1 + totalTestimonials) % totalTestimonials;
+      //   showTestimonial(currentTestimonialIndex);
+      // }
 
-      function currentTestimonial(index) {
-        currentTestimonialIndex = index;
-        showTestimonial(currentTestimonialIndex);
-      }
+      // function currentTestimonial(index) {
+      //   currentTestimonialIndex = index;
+      //   showTestimonial(currentTestimonialIndex);
+      // }
 
-      // Auto-play testimonials
-      setInterval(nextTestimonial, 5000);
+      // // Auto-play testimonials
+      // setInterval(nextTestimonial, 5000);
 
-      // Touch/swipe support for mobile
-      let startX = 0;
-      let endX = 0;
-      document
-        .getElementById("testimonialsWrapper")
-        .addEventListener("touchstart", (e) => {
-          startX = e.changedTouches[0].screenX;
-        });
-      document
-        .getElementById("testimonialsWrapper")
-        .addEventListener("touchend", (e) => {
-          endX = e.changedTouches[0].screenX;
-          handleSwipe();
-        });
-      function handleSwipe() {
-        const threshold = 50;
-        const diff = startX - endX;
-        if (Math.abs(diff) > threshold) {
-          if (diff > 0) {
-            nextTestimonial();
-          } else {
-            prevTestimonial();
-          }
-        }
-      }
-      // Initialize first testimonial
-      showTestimonial(0);
+      // // Touch/swipe support for mobile
+      // let startX = 0;
+      // let endX = 0;
+      // document
+      //   .getElementById("testimonialsWrapper")
+      //   .addEventListener("touchstart", (e) => {
+      //     startX = e.changedTouches[0].screenX;
+      //   });
+      // document
+      //   .getElementById("testimonialsWrapper")
+      //   .addEventListener("touchend", (e) => {
+      //     endX = e.changedTouches[0].screenX;
+      //     handleSwipe();
+      //   });
+      // function handleSwipe() {
+      //   const threshold = 50;
+      //   const diff = startX - endX;
+      //   if (Math.abs(diff) > threshold) {
+      //     if (diff > 0) {
+      //       nextTestimonial();
+      //     } else {
+      //       prevTestimonial();
+      //     }
+      //   }
+      // }
+      // // Initialize first testimonial
+      // showTestimonial(0);
     </script>
   </body>
 </html>
